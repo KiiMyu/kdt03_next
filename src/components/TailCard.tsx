@@ -1,4 +1,4 @@
-import reactImg from '../assets/react.svg'
+import reactImg from '@/assets/react.svg'
 
 interface TailCardProps {
     imageSrc : string,
