@@ -18,6 +18,8 @@ export default function Header({ pageMap }: HeaderProps) {
 
   const isLogin = useAtomValue<boolean>(loginAtom)
 
+  
+
   return (
     <header className='bg-blue-600 text-white shadow-md'>
       <nav className='container h-16 mx-auto flex justify-between items-center'>

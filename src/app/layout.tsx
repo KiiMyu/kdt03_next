@@ -20,6 +20,21 @@ export const metadata: Metadata = {
   description: "부산대학교 디지털 웹 교육 25년 3기입니다.",
 };
 
+interface PageMapItem {
+  name: string;
+  url: string;
+  isHide?: boolean;
+}
+
+  const pageMap : PageMapItem[] = [
+    { name: "로그인", url: "/", isHide: false},
+    { name: "로또", url: "/lotto", isHide: false },
+    { name: "축제정보", url: "/festival", isHide: false },
+    { name: "festivalcontent", url: "/festival/content", isHide: true },
+    { name: "TodoList", url: "/todo" , isHide: false},
+  ];
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,9 +45,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className='w-full h-screen flex flex-col overflow-y-hidden'>
-          <Header pageMap={null}/>
-          <main className='container mx-auto flex flex-col overflow-auto h-full'>
+        <div className='w-full h-screen flex flex-col grow overflow-y-hidden'>
+          <Header pageMap={pageMap}/>
+          <main className='flex flex-col overflow-auto h-full'>
             {children}
           </main>
           <Footer />
